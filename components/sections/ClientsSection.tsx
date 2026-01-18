@@ -37,9 +37,9 @@ export default function ClientsSection() {
             >
               <div className="bg-gradient-to-br from-bg to-white px-8 py-6 lg:px-12 lg:py-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300">
                 {/* If logo is available, show it. Otherwise, show text */}
-                {client.logoUrl ? (
+                {client.logo ? (
                   <img
-                    src={client.logoUrl}
+                    src={client.logo}
                     alt={client.name}
                     className="h-12 lg:h-16 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                   />
@@ -48,9 +48,6 @@ export default function ClientsSection() {
                     <p className="text-xl lg:text-2xl font-bold text-text group-hover:text-primary transition-colors">
                       {client.name}
                     </p>
-                    {client.event && (
-                      <p className="text-sm text-text/50 mt-1">{client.event}</p>
-                    )}
                   </div>
                 )}
               </div>

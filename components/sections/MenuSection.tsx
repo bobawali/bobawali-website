@@ -52,9 +52,6 @@ export default function MenuSection() {
                   <p className="text-text/50 text-lg">
                     Menu poster will go here
                   </p>
-                  <p className="text-text/40 text-sm mt-2">
-                    Replace with: {menuConfig.menuPosterUrl}
-                  </p>
                 </div>
               </div>
             </div>
