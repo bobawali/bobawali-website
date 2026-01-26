@@ -3,12 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const topDrinks = [
-  { name: 'Mango Lassi', color: 'bg-yellow-400' },
-  { name: 'Gulab Jamun Milk Tea', color: 'bg-amber-600' },
-  { name: 'Falooda Milk Tea', color: 'bg-pink-300' },
-]
-
 export default function HeroBackground() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -61,7 +55,6 @@ export default function HeroBackground() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-            className="mb-8"
           >
             <button
               onClick={() => scrollToSection('#inquiry')}
@@ -69,26 +62,6 @@ export default function HeroBackground() {
             >
               Book Your Event
             </button>
-          </motion.div>
-
-          {/* Top drinks preview */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap gap-2 justify-center"
-          >
-            <span className="text-text/50 text-sm">Fan favorites:</span>
-            {topDrinks.map((drink, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-1.5 text-sm text-text/70"
-              >
-                <span className={`w-2 h-2 rounded-full ${drink.color}`} />
-                {drink.name}
-                {i < topDrinks.length - 1 && <span className="text-text/30 ml-1">·</span>}
-              </span>
-            ))}
           </motion.div>
         </motion.div>
       </div>

@@ -1,6 +1,5 @@
 // Carousel drink photos for menu section
 export const drinkImages = [
-  '/drink_pics/pink_boba_drink_closeup.jpeg',
   '/drink_pics/orange_drink_kendra_scott.jpeg',
   '/drink_pics/pink_drink_with_cream.jpeg',
   '/drink_pics/four_drinks_tray.jpeg',
