@@ -1,49 +1,20 @@
-export interface Drink {
-  id: string
-  name: string
-  description: string
-  tag?: 'Best Seller' | 'Desi Classic' | 'Refresher' | 'New'
-}
-
-export const featuredDrinks: Drink[] = [
-  {
-    id: 'mango-lassi',
-    name: 'Mango Lassi Boba',
-    description: 'Creamy mango lassi with tapioca pearls',
-    tag: 'Best Seller',
-  },
-  {
-    id: 'rooh-afza',
-    name: 'Rooh Afza Lemonade Boba',
-    description: 'Rose-flavored refresher with a citrus twist',
-    tag: 'Desi Classic',
-  },
-  {
-    id: 'falooda',
-    name: 'Falooda Milk Tea',
-    description: 'Classic falooda flavors in milk tea form',
-    tag: 'Desi Classic',
-  },
-  {
-    id: 'gulab-jamun',
-    name: 'Gulab Jamun Milk Tea',
-    description: 'Sweet cardamom-rose milk tea inspired by gulab jamun',
-    tag: 'Best Seller',
-  },
-  {
-    id: 'rose-lemonade',
-    name: 'Rose Lemonade',
-    description: 'Floral and refreshing lemonade with rose syrup',
-    tag: 'Refresher',
-  },
-  {
-    id: 'masala-chai',
-    name: 'Masala Chai Boba',
-    description: 'Spiced chai with tapioca pearls',
-    tag: 'Desi Classic',
-  },
+// Carousel drink photos for menu section
+export const drinkImages = [
+  '/drink_pics/pink_boba_drink_closeup.jpeg',
+  '/drink_pics/orange_drink_kendra_scott.jpeg',
+  '/drink_pics/pink_drink_with_cream.jpeg',
+  '/drink_pics/four_drinks_tray.jpeg',
+  '/drink_pics/drinks_with_vases.jpeg',
+  '/drink_pics/brown_drink_in_hand.jpeg',
+  '/drink_pics/pink_drink_with_straws.jpeg',
+  '/drink_pics/drink_at_catering_event.jpeg',
+  '/drink_pics/tan_brown_drink.jpeg',
+  '/drink_pics/drink_closeup_1.jpeg',
+  '/drink_pics/drink_closeup_2.jpeg',
+  '/drink_pics/drink_closeup_3.jpeg',
+  '/drink_pics/drink_closeup_4.jpeg',
 ]
 
 export const menuConfig = {
-  fullMenuPdfUrl: '#', // Placeholder - update with actual menu PDF link
+  fullMenuPdfUrl: process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view',
 }
