@@ -7,7 +7,7 @@ import Link from 'next/link'
 const MENU_URL = process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view'
 
 const navLinks = [
-  { href: '#services', label: 'Events' },
+  { href: '#inquiry', label: 'Events' },
   { href: '#inquiry', label: 'Contact' },
 ]
 
