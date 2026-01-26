@@ -12,6 +12,8 @@ export const drinkImages = [
   '/drink_pics/drink_closeup_2.jpeg',
   '/drink_pics/drink_closeup_3.jpeg',
   '/drink_pics/drink_closeup_4.jpeg',
+  '/drink_pics/pink_and_brown_drinks.jpeg',
+  '/drink_pics/drink_w_salam_cola.jpeg',
 ]
 
 export const menuConfig = {
