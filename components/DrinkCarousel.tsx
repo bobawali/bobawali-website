@@ -1,37 +1,52 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 
 interface DrinkCarouselProps {
   images: string[]
+  autoPlayInterval?: number
 }
 
-export default function DrinkCarousel({ images }: DrinkCarouselProps) {
+export default function DrinkCarousel({ images, autoPlayInterval = 3000 }: DrinkCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
 
   // Show 3 images at a time
   const visibleCount = 3
   const maxIndex = images.length - visibleCount
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
-  }
+  }, [maxIndex])
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
   }
 
-  const getVisibleImages = () => {
-    return images.slice(currentIndex, currentIndex + visibleCount)
-  }
+  // Auto-advance carousel
+  useEffect(() => {
+    if (!isHovered && autoPlayInterval > 0) {
+      const interval = setInterval(nextSlide, autoPlayInterval)
+      return () => clearInterval(interval)
+    }
+  }, [isHovered, autoPlayInterval, nextSlide])
+
+  // Calculate transform based on current index
+  const itemWidth = 100 / visibleCount // Each item is 33.33% of container
+  const gapPercent = 2 // Approximate gap as percentage
+  const translateX = -(currentIndex * (itemWidth + gapPercent))
 
   return (
-    <div className="relative flex items-center gap-2 md:gap-4">
+    <div
+      className="relative flex items-center gap-2 md:gap-4"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* Left arrow */}
       <button
         onClick={prevSlide}
-        className="flex-shrink-0 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+        className="flex-shrink-0 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-10"
         aria-label="Previous drinks"
       >
         <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,18 +56,22 @@ export default function DrinkCarousel({ images }: DrinkCarouselProps) {
 
       {/* Carousel container */}
       <div className="overflow-hidden flex-1">
-        <div className="grid grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-          {getVisibleImages().map((image, localIndex) => (
+        <div
+          className="flex gap-2 md:gap-6 lg:gap-8 transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(${translateX}%)` }}
+        >
+          {images.map((image, index) => (
             <div
               key={image}
-              className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+              className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex-shrink-0"
+              style={{ width: `calc(${itemWidth}% - 0.5rem)` }}
             >
               <Image
                 src={image}
                 alt="Boba Wali signature drink"
                 fill
                 className="object-cover"
-                priority={localIndex === 0}
+                priority={index < 3}
               />
             </div>
           ))}
@@ -62,7 +81,7 @@ export default function DrinkCarousel({ images }: DrinkCarouselProps) {
       {/* Right arrow */}
       <button
         onClick={nextSlide}
-        className="flex-shrink-0 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+        className="flex-shrink-0 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-10"
         aria-label="Next drinks"
       >
         <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
