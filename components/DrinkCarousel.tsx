@@ -34,8 +34,7 @@ export default function DrinkCarousel({ images, autoPlayInterval = 3000 }: Drink
 
   // Calculate transform based on current index
   const itemWidth = 100 / visibleCount // Each item is 33.33% of container
-  const gapPercent = 2 // Approximate gap as percentage
-  const translateX = -(currentIndex * (itemWidth + gapPercent))
+  const translateX = -(currentIndex * itemWidth)
 
   return (
     <div
@@ -57,14 +56,14 @@ export default function DrinkCarousel({ images, autoPlayInterval = 3000 }: Drink
       {/* Carousel container */}
       <div className="overflow-hidden flex-1">
         <div
-          className="flex gap-2 md:gap-6 lg:gap-8 transition-transform duration-700 ease-in-out"
+          className="flex gap-2 md:gap-6 lg:gap-8 transition-transform duration-700 ease-in-out motion-reduce:transition-none"
           style={{ transform: `translateX(${translateX}%)` }}
         >
           {images.map((image, index) => (
             <div
-              key={image}
+              key={`drink-${index}`}
               className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex-shrink-0"
-              style={{ width: `calc(${itemWidth}% - 0.5rem)` }}
+              style={{ width: `${itemWidth}%` }}
             >
               <Image
                 src={image}
