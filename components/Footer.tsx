@@ -44,11 +44,17 @@ export default function Footer() {
                 alt="Boba Wali"
                 width={48}
                 height={48}
-                className="w-12 h-12 brightness-0 invert"
+                className="w-12 h-12"
               />
               <span className="font-display text-2xl">Boba Wali</span>
             </div>
             <p className="text-white/80 text-sm">Based in Houston, TX</p>
+            <Link
+              href="mailto:bobawali.htx@gmail.com"
+              className="text-white/80 hover:text-white text-sm transition-colors"
+            >
+              bobawali.htx@gmail.com
+            </Link>
           </div>
 
           {/* Social Links */}

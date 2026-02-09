@@ -45,9 +45,9 @@ export default function Navbar() {
             <Image
               src="/bobawalilogo.png"
               alt="Boba Wali"
-              width={48}
-              height={48}
-              className="w-10 h-10 md:w-12 md:h-12"
+              width={64}
+              height={64}
+              className="w-14 h-14 md:w-16 md:h-16"
             />
             <span className="font-display text-xl md:text-2xl text-primary">
               Boba Wali
