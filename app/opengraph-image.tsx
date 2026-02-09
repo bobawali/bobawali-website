@@ -65,15 +65,27 @@ export default async function Image() {
           <div
             style={{
               display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               fontSize: 80,
-              fontWeight: 'bold',
+              fontWeight: 900,
               color: '#001B2E',
               lineHeight: 1.1,
               marginBottom: '30px',
               maxWidth: '1000px',
             }}
           >
-            Your Event Deserves Better Boba
+            <div style={{ display: 'flex' }}>Your Event Deserves</div>
+            <div
+              style={{
+                display: 'flex',
+                background: 'linear-gradient(90deg, #790000 0%, #a83232 25%, #C27013 50%, #a83232 75%, #790000 100%)',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Better Boba
+            </div>
           </div>
 
           <div
