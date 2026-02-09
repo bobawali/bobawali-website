@@ -125,7 +125,7 @@ export const clients: Client[] = [
 ### Fonts
 | Token | Font | Usage |
 |-------|------|-------|
-| `font-display` | Radicalls | Logo, brand headings (custom font) |
+| `font-display` | Radicalis | Logo, brand headings (custom font) |
 | `font-sans` | Inter | Body text, UI elements (Google Font) |
 
 ### Custom CSS Utilities

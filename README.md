@@ -9,7 +9,7 @@ Houston's first South Asian fusion bubble tea cart.
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Analytics**: PostHog
-- **Fonts**: Inter (body/headings), Radicalls (display/logo)
+- **Fonts**: Inter (body/headings), Radicalis (display/logo)
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ npm start
 ### Fonts
 | Token | Font | Usage |
 |-------|------|-------|
-| `font-display` | Radicalls | Logo, brand headings |
+| `font-display` | Radicalis | Logo, brand headings |
 | `font-sans` | Inter | Body text, UI elements |
 
 ### Switching to Raleway (Menu Font)

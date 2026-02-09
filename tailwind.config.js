@@ -17,7 +17,7 @@ module.exports = {
         text: '#001B2E',
       },
       fontFamily: {
-        display: ['Radicalls', 'cursive'],
+        display: ['Radicalis', 'cursive'],
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
     },

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Radicalls';
-  src: url('/fonts/Radicallis.ttf') format('truetype');
+  font-family: 'Radicalis';
+  src: url('/Radicalis.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
