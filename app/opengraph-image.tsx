@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Boba Wali - South Asian Fusion Bubble Tea Cart'
+export const alt = 'Boba Wali - Your Event Deserves Better Boba'
 export const size = {
   width: 1200,
   height: 630,
@@ -10,6 +10,11 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  // Fetch the hero background image
+  const imageData = await fetch(
+    new URL('../public/photos/cart_at_event_with_customers.jpeg', import.meta.url)
+  ).then((res) => res.arrayBuffer())
+
   return new ImageResponse(
     (
       <div
@@ -20,35 +25,31 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#FFF7F0',
-          padding: '80px',
+          position: 'relative',
         }}
       >
-        {/* Background accent circles */}
-        <div
+        {/* Background image */}
+        <img
+          src={`data:image/jpeg;base64,${Buffer.from(imageData).toString('base64')}`}
           style={{
             position: 'absolute',
-            top: '-100px',
-            right: '-100px',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background: 'rgba(234, 182, 201, 0.3)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-150px',
-            left: '-150px',
-            width: '500px',
-            height: '500px',
-            borderRadius: '50%',
-            background: 'rgba(121, 0, 0, 0.1)',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
           }}
         />
 
-        {/* Content */}
+        {/* Overlay gradient matching the website */}
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(to bottom right, rgba(255, 247, 240, 0.95), rgba(255, 247, 240, 0.85), rgba(121, 0, 0, 0.6))',
+          }}
+        />
+
+        {/* Content - matching the hero section */}
         <div
           style={{
             display: 'flex',
@@ -56,56 +57,36 @@ export default async function Image() {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            zIndex: 1,
+            padding: '60px',
+            position: 'relative',
+            zIndex: 10,
           }}
         >
-          {/* Logo placeholder - using text since we can't easily load image in edge runtime */}
           <div
             style={{
-              fontSize: 120,
+              display: 'flex',
+              fontSize: 80,
               fontWeight: 'bold',
-              color: '#790000',
-              marginBottom: '40px',
-              letterSpacing: '-2px',
+              color: '#001B2E',
+              lineHeight: 1.1,
+              marginBottom: '30px',
+              maxWidth: '1000px',
             }}
           >
-            Boba Wali
+            Your Event Deserves Better Boba
           </div>
 
-          {/* Tagline */}
           <div
             style={{
-              fontSize: 48,
-              color: '#001B2E',
-              maxWidth: '900px',
-              lineHeight: 1.3,
-              fontWeight: 500,
+              display: 'flex',
+              fontSize: 32,
+              color: 'rgba(0, 27, 46, 0.8)',
+              maxWidth: '800px',
+              lineHeight: 1.4,
             }}
           >
-            Houston's First South Asian
+            We bring South Asian fusion drinks to Houston weddings, parties & corporate events
           </div>
-          <div
-            style={{
-              fontSize: 48,
-              color: '#001B2E',
-              maxWidth: '900px',
-              lineHeight: 1.3,
-              fontWeight: 500,
-            }}
-          >
-            Fusion Bubble Tea Cart
-          </div>
-
-          {/* Accent bar */}
-          <div
-            style={{
-              marginTop: '50px',
-              width: '300px',
-              height: '6px',
-              background: 'linear-gradient(90deg, #790000 0%, #EAB6C9 100%)',
-              borderRadius: '3px',
-            }}
-          />
         </div>
       </div>
     ),
