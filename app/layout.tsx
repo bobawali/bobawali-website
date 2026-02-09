@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Boba Wali - South Asian Fusion Bubble Tea Cart',
+        alt: 'Boba Wali - More Than Drinks. It\'s an Experience.',
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Boba Wali – South Asian Fusion Bubble Tea Cart',
     description: 'Houston\'s first South Asian fusion bubble tea & refreshers cart.',
-    images: ['/og-image.png'],
+    images: ['/opengraph-image'],
   },
 }
 

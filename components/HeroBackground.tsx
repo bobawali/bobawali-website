@@ -37,17 +37,17 @@ export default function HeroBackground() {
           className="text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-text leading-tight mb-6">
-            Your Event Deserves{' '}
-            <span className="text-shimmer">Better Boba</span>
+            <span className="block">More Than Drinks.</span>
+            <span className="text-shimmer block">It&apos;s an Experience.</span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-lg md:text-xl text-text/80 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-text/80 mb-8 max-w-3xl mx-auto"
           >
-            We bring South Asian fusion drinks to Houston weddings, parties & corporate events. Non-alcoholic. Unforgettable.
+            South Asian fusion drinks for weddings, parties, and corporate gatherings across Houston. Non-alcoholic sips your guests won&apos;t forget.
           </motion.p>
 
           {/* CTA */}

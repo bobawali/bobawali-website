@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Boba Wali - Your Event Deserves Better Boba'
+export const alt = 'Boba Wali - More Than Drinks. It\'s an Experience.'
 export const size = {
   width: 1200,
   height: 630,
@@ -68,14 +68,14 @@ export default async function Image() {
               flexDirection: 'column',
               alignItems: 'center',
               fontSize: 80,
-              fontWeight: 900,
+              fontWeight: 700,
               color: '#001B2E',
               lineHeight: 1.1,
               marginBottom: '30px',
               maxWidth: '1000px',
             }}
           >
-            <div style={{ display: 'flex' }}>Your Event Deserves</div>
+            <div style={{ display: 'flex' }}>More Than Drinks.</div>
             <div
               style={{
                 display: 'flex',
@@ -84,20 +84,21 @@ export default async function Image() {
                 color: 'transparent',
               }}
             >
-              Better Boba
+              It&apos;s an Experience.
             </div>
           </div>
 
           <div
             style={{
               display: 'flex',
+              fontWeight: 500,
               fontSize: 32,
               color: 'rgba(0, 27, 46, 0.8)',
               maxWidth: '800px',
               lineHeight: 1.4,
             }}
           >
-            We bring South Asian fusion drinks to Houston weddings, parties & corporate events
+            South Asian fusion drinks for weddings, parties, and corporate gatherings across Houston. Non-alcoholic sips your guests won&apos;t forget.
           </div>
         </div>
       </div>

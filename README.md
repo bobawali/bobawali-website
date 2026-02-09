@@ -36,7 +36,7 @@ npm start
 │   ├── globals.css         # Global styles & custom fonts
 │   └── icon.png            # Favicon
 ├── components/
-│   ├── Hero.tsx            # Hero section
+│   ├── HeroBackground.tsx  # Hero section with headline & CTA
 │   ├── Navbar.tsx          # Navigation bar
 │   ├── Footer.tsx          # Footer
 │   └── sections/           # Page sections
@@ -97,6 +97,17 @@ body { @apply font-medium; } /* Raleway 400 is thin, 500 looks better */
 ```tsx
 className="uppercase tracking-wide"
 ```
+
+## Hosting Plan: GitHub Pages
+
+Host on GitHub Pages (free) using Next.js static export (`output: 'export'` in `next.config.js`).
+
+- Current deployed size: ~137 MB of 1 GB limit (images are 128 MB of that)
+- Convert images to WebP before deploying
+- No server-side features (no API routes, SSR, middleware) — Google Form iframe still works
+- Custom domain requires CNAME DNS record, SSL is free
+- SEO is fine — static export generates fully rendered HTML with metadata/JSON-LD baked in
+- Set `images: { unoptimized: true }` in `next.config.js` since `next/image` optimization needs a server
 
 ## Environment Variables
 

@@ -41,7 +41,7 @@
 │   ├── globals.css         # Global styles, custom fonts, utilities
 │   └── icon.png            # Favicon
 ├── components/
-│   ├── Hero.tsx            # Hero section with headline & CTA
+│   ├── HeroBackground.tsx  # Hero section with headline & CTA
 │   ├── Navbar.tsx          # Navigation bar
 │   ├── Footer.tsx          # Footer with social links
 │   ├── Preloader.tsx       # Loading screen animation
