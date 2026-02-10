@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
-
-export const runtime = 'edge'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 
 export const alt = 'Boba Wali - More Than Drinks. It\'s an Experience.'
 export const size = {
@@ -10,10 +10,10 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  // Fetch the hero background image
-  const imageData = await fetch(
-    new URL('../public/photos/cart_at_event_with_customers.jpeg', import.meta.url)
-  ).then((res) => res.arrayBuffer())
+  // Read the hero background image from disk
+  const imageData = await readFile(
+    join(process.cwd(), 'public/photos/cart_at_event_with_customers.jpeg')
+  )
 
   return new ImageResponse(
     (
@@ -30,7 +30,7 @@ export default async function Image() {
       >
         {/* Background image */}
         <img
-          src={`data:image/jpeg;base64,${Buffer.from(imageData).toString('base64')}`}
+          src={`data:image/jpeg;base64,${imageData.toString('base64')}`}
           style={{
             position: 'absolute',
             width: '100%',

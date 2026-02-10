@@ -2,14 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-
-const MENU_URL = process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view'
-
-const navLinks = [
-  { href: '#inquiry', label: 'Events' },
-  { href: '#inquiry', label: 'Contact' },
-]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -54,32 +46,12 @@ export default function Navbar() {
             </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-text hover:text-primary transition-colors font-medium"
-              >
-                {link.label}
-              </button>
-            ))}
-            <Link
-              href={MENU_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text hover:text-primary transition-colors font-medium"
-            >
-              Menu
-            </Link>
-            <button
-              onClick={() => scrollToSection('#inquiry')}
-              className="bg-primary hover:bg-primary/80 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg"
-            >
-              Book Us
-            </button>
-          </div>
+          <button
+            onClick={() => scrollToSection('#inquiry')}
+            className="bg-primary hover:bg-primary/80 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg"
+          >
+            Book Us
+          </button>
 
         </div>
       </div>
