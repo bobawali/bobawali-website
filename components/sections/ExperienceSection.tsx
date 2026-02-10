@@ -16,27 +16,23 @@ function StepItem({
 }) {
   // Each step activates at a different scroll threshold
   const threshold = index / experienceSteps.length
-  const opacity = useTransform(progress, [threshold, threshold + 0.15], [0.2, 1])
+  const opacity = useTransform(progress, [threshold, threshold + 0.15], [0.4, 1])
   const y = useTransform(progress, [threshold, threshold + 0.15], [16, 0])
   const numberBg = useTransform(progress, [threshold, threshold + 0.1], [0, 1])
+  const bgColor = useTransform(numberBg, [0, 1], ['rgba(0,27,46,0.06)', 'rgba(121,0,0,0.08)'])
+  const textColor = useTransform(numberBg, [0, 1], ['rgba(0,27,46,0.25)', 'rgba(121,0,0,1)'])
+  const lineScaleY = useTransform(
+    progress,
+    [threshold + 0.1, (index + 1) / experienceSteps.length],
+    [0, 1]
+  )
 
   return (
     <div className="flex gap-3 md:gap-4 relative">
       {/* Step number + line */}
       <div className="flex flex-col items-center flex-shrink-0">
         <motion.div
-          style={{
-            backgroundColor: useTransform(
-              numberBg,
-              [0, 1],
-              ['rgba(0,27,46,0.06)', 'rgba(121,0,0,0.08)']
-            ),
-            color: useTransform(
-              numberBg,
-              [0, 1],
-              ['rgba(0,27,46,0.25)', 'rgba(121,0,0,1)']
-            ),
-          }}
+          style={{ backgroundColor: bgColor, color: textColor }}
           className="w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-bold"
         >
           {index + 1}
@@ -47,13 +43,7 @@ function StepItem({
           <div className="w-px flex-1 min-h-[24px] bg-primary/[0.06] relative mt-1.5 mb-1.5">
             <motion.div
               className="absolute inset-0 bg-primary/15 origin-top"
-              style={{
-                scaleY: useTransform(
-                  progress,
-                  [threshold + 0.1, (index + 1) / experienceSteps.length],
-                  [0, 1]
-                ),
-              }}
+              style={{ scaleY: lineScaleY }}
             />
           </div>
         )}
@@ -141,16 +131,17 @@ export default function ExperienceSection() {
           </motion.div>
 
           {/* Steps with progress line */}
-          <div className="flex flex-col">
+          <ol className="flex flex-col list-none p-0 m-0">
             {experienceSteps.map((step, index) => (
-              <StepItem
-                key={step.id}
-                step={step}
-                index={index}
-                progress={scrollYProgress}
-              />
+              <li key={step.id}>
+                <StepItem
+                  step={step}
+                  index={index}
+                  progress={scrollYProgress}
+                />
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>
