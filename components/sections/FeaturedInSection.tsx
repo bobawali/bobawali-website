@@ -17,14 +17,14 @@ export default function FeaturedInSection() {
           className="md:hidden"
         >
           <p className="text-text/50 text-xs text-center mb-3">Featured In</p>
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-6">
             {newsFeatures.map((feature) => (
               <Link
                 key={feature.id}
                 href={feature.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="opacity-60 hover:opacity-100 transition-opacity"
+                className="flex flex-col items-center gap-2 py-2 opacity-80 active:opacity-100 transition-opacity"
               >
                 {feature.logoUrl && (
                   <Image
@@ -37,6 +37,12 @@ export default function FeaturedInSection() {
                     } ${feature.id === 'the-juggernaut' ? 'invert' : ''}`}
                   />
                 )}
+                <span className="inline-flex items-center gap-0.5 text-text/30 text-[10px] font-normal tracking-wide">
+                  Read
+                  <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
