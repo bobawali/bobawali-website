@@ -51,7 +51,7 @@ export default function MenuSection() {
             href={menuConfig.fullMenuPdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl shadow-lg"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-5 py-2.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg transition-all hover:scale-105 hover:shadow-xl shadow-lg"
           >
             View Full Menu
             <svg
