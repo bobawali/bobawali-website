@@ -70,8 +70,8 @@ export default function InquirySection({
       id="inquiry"
       className="py-20 lg:py-28 relative overflow-hidden"
     >
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-bg to-secondary/5 -z-10" />
+      {/* White background for alternating section pattern */}
+      <div className="absolute inset-0 bg-white -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

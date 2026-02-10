@@ -6,6 +6,7 @@ import {
   LogoCarousel,
   FeaturedInSection,
   MenuSection,
+  ReviewsSection,
 } from '@/components/sections'
 
 export default function Home() {
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* Menu - Signature Drinks */}
       <MenuSection />
+
+      {/* Reviews - Google Reviews carousel */}
+      <ReviewsSection />
 
       {/* Featured In - Press mentions */}
       <FeaturedInSection />
