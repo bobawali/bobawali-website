@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Preloader from '@/components/Preloader'
-import MobileCTA from '@/components/MobileCTA'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -80,7 +80,6 @@ export default function RootLayout({
         <Preloader />
         <Navbar />
         {children}
-        <MobileCTA />
       </body>
     </html>
   )

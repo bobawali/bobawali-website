@@ -45,13 +45,13 @@
 │   ├── Navbar.tsx          # Navigation bar
 │   ├── Footer.tsx          # Footer with social links
 │   ├── Preloader.tsx       # Loading screen animation
-│   ├── MobileCTA.tsx       # Sticky mobile call-to-action
 │   ├── DrinkCarousel.tsx   # Infinite-loop drink image carousel (peek layout)
 │   └── sections/           # Page sections (barrel-exported via index.ts)
 │       ├── InquirySection.tsx   # Embedded Google Form
 │       ├── FeaturedInSection.tsx # Press mentions
 │       ├── LogoCarousel.tsx     # Client logos carousel
 │       ├── MenuSection.tsx      # Menu section with DrinkCarousel + CTA
+│       ├── ExperienceSection.tsx # "The Experience" - 3-step service overview with scroll-driven progress line
 │       ├── ReviewsSection.tsx   # Google Reviews auto-rotating carousel
 │       ├── AboutSection.tsx     # (available, not currently used)
 │       └── index.ts             # Barrel exports
@@ -60,6 +60,7 @@
 │   ├── features.ts         # Press/features data
 │   ├── menu.ts             # Menu items
 │   ├── reviews.ts          # Google Reviews data
+│   ├── experience.ts       # Experience section steps & config
 │   ├── gallery.ts          # Gallery images
 │   └── services.ts         # Services data
 ├── public/                 # Static assets
@@ -172,7 +173,7 @@ NEXT_PUBLIC_POSTHOG_HOST=<PostHog host URL>
 
 3. **SEO** - Metadata and JSON-LD structured data are configured in `app/layout.tsx`.
 
-4. **Mobile-First** - The design is responsive. MobileCTA provides a sticky booking button on mobile.
+4. **Mobile-First** - The design is responsive.
 
 5. **No Backend** - Form submissions go directly to Google Forms via embedded iframe.
 
@@ -190,4 +191,4 @@ NEXT_PUBLIC_POSTHOG_HOST=<PostHog host URL>
 - Add `id` attributes to sections for anchor navigation
 - Use mobile-first responsive values: `mobile-value md:desktop-value` (e.g. `px-5 md:px-8 text-sm md:text-lg`)
 - Background color `#FFF7F0` is hardcoded in some gradient overlays (e.g. DrinkCarousel edge fades) — keep in sync with the `bg` Tailwind token
-- **Section backgrounds alternate** between white (`bg-white`) and cream (default page `bg` color `#FFF7F0`). Current order: Hero (cream) → LogoCarousel (cream) → MenuSection (cream) → ReviewsSection (white) → FeaturedInSection (cream) → InquirySection (white) → Footer (maroon). When adding new sections, maintain this alternating pattern.
+- **Section backgrounds alternate** between white (`bg-white`) and cream (default page `bg` color `#FFF7F0`). Current order: Hero (cream) → LogoCarousel (cream) → MenuSection (cream) → ExperienceSection (white) → ReviewsSection (cream) → FeaturedInSection (cream) → InquirySection (white) → Footer (maroon). When adding new sections, maintain this alternating pattern.
