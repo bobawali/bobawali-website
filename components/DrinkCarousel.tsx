@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import Image from 'next/image'
 
 interface DrinkCarouselProps {
@@ -15,11 +15,11 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
   const cloneCount = visibleCount + 2
 
   // Clone images for infinite loop: [last N] + [all] + [first N]
-  const extendedImages = [
+  const extendedImages = useMemo(() => [
     ...images.slice(-cloneCount),
     ...images,
     ...images.slice(0, cloneCount),
-  ]
+  ], [images, cloneCount])
 
   // Start at the first real image (offset by cloned prefix)
   const [currentIndex, setCurrentIndex] = useState(cloneCount)
@@ -27,7 +27,6 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
   const [isHovered, setIsHovered] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
 
-  const trackRef = useRef<HTMLDivElement>(null)
   const touchStartX = useRef(0)
   const touchStartY = useRef(0)
   const isAnimatingRef = useRef(false)
@@ -63,19 +62,17 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
     }
   }, [isTransitioning])
 
-  const stepSize = 1
-
   const nextSlide = useCallback(() => {
     if (isAnimatingRef.current) return
     isAnimatingRef.current = true
-    setCurrentIndex((prev) => prev + stepSize)
-  }, [stepSize])
+    setCurrentIndex((prev) => prev + 1)
+  }, [])
 
   const prevSlide = useCallback(() => {
     if (isAnimatingRef.current) return
     isAnimatingRef.current = true
-    setCurrentIndex((prev) => prev - stepSize)
-  }, [stepSize])
+    setCurrentIndex((prev) => prev - 1)
+  }, [])
 
   // Infinite loop snap on transition end
   const handleTransitionEnd = useCallback(() => {
@@ -183,7 +180,6 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
           onTouchEnd={handleTouchEnd}
         >
           <div
-            ref={trackRef}
             className={`flex gap-2 md:gap-6 ${isTransitioning ? 'transition-transform duration-700 ease-in-out motion-reduce:transition-none' : ''}`}
             style={{ transform: `translateX(${getTranslateX()})` }}
             onTransitionEnd={handleTransitionEnd}
