@@ -16,7 +16,7 @@ export const experienceSteps: ExperienceStep[] = [
     id: 'live-service',
     title: 'Crafted Live at Your Event',
     description:
-      "Our baristas roll up with the cart and serve fresh drinks on-site — you don't lift a finger.",
+      "Our baristas roll up with the cart and serve fresh drinks on-site.",
     tags: ['Weddings', 'Corporate', 'Birthdays', 'Parties', 'School Events', 'Festivals', '& More'],
   },
   {
@@ -30,7 +30,7 @@ export const experienceSteps: ExperienceStep[] = [
 export const experienceConfig = {
   title: 'The Experience',
   subtitle:
-    "We're not a traditional boba shop. We bring South Asian fusion drinks — crafted fresh, live at your event.",
+    "We're not a traditional boba shop. We bring South Asian fusion drinks, crafted fresh, live at your event.",
   image: '/photos/cart-setup.jpeg',
   imageAlt: 'Boba Wali cart setup at event',
 }

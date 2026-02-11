@@ -69,15 +69,6 @@ export default function LogoCarousel() {
         </motion.div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="text-center text-text/40 text-sm mt-6 px-4"
-      >
-        From weddings, to festivals, to office parties... we've done it all.
-      </motion.p>
     </section>
   )
 }

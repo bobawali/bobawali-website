@@ -24,7 +24,7 @@ export default function MenuSection() {
             Our Signature Creations
           </h2>
           <p className="text-lg md:text-xl text-text/70 max-w-3xl mx-auto mb-4">
-            From classic Mango Lassi to Gulab Jamun Milk Tea, Falooda, Rooh Afza Lemonade, and beyond!
+            From classic Mango Lassi to Gulab Jamun Milk Tea, Falooda, Rose Lemonade, and beyond!
           </p>
         </motion.div>
 

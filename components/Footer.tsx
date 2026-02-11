@@ -42,9 +42,9 @@ export default function Footer() {
               <Image
                 src="/bobawalilogo.png"
                 alt="Boba Wali"
-                width={48}
-                height={48}
-                className="w-12 h-12"
+                width={64}
+                height={64}
+                className="w-16 h-16"
               />
               <span className="font-display text-2xl">Boba Wali</span>
             </div>
