@@ -86,7 +86,7 @@ export default function ExperienceSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start 0.8', 'end 0.6'],
+    offset: ['start 0.55', 'end 0.6'],
   })
 
   return (
