@@ -7,3 +7,5 @@ node_modules
 !app/icon.png
 docs/
 tsconfig.tsbuildinfo
+*.MOV
+*.mov
