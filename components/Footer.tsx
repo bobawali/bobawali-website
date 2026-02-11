@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 const socialLinks = [
@@ -36,18 +35,8 @@ export default function Footer() {
     <footer id="footer" className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo and Location */}
+          {/* Location & Contact */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/bobawalilogo.png"
-                alt="Boba Wali"
-                width={64}
-                height={64}
-                className="w-16 h-16"
-              />
-              <span className="font-display text-2xl">Boba Wali</span>
-            </div>
             <p className="text-white/80 text-sm">Based in Houston, TX</p>
             <Link
               href="mailto:bobawali.htx@gmail.com"
