@@ -31,6 +31,6 @@ export const experienceConfig = {
   title: 'The Experience',
   subtitle:
     "We're not a traditional boba shop. We bring South Asian fusion drinks — crafted fresh, live at your event.",
-  image: '/photos/cart setup.jpeg',
+  image: '/photos/cart-setup.jpeg',
   imageAlt: 'Boba Wali cart setup at event',
 }

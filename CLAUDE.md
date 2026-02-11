@@ -53,16 +53,13 @@
 │       ├── MenuSection.tsx      # Menu section with DrinkCarousel + CTA
 │       ├── ExperienceSection.tsx # "The Experience" - 3-step service overview with scroll-driven progress line
 │       ├── ReviewsSection.tsx   # Google Reviews auto-rotating carousel
-│       ├── AboutSection.tsx     # (available, not currently used)
 │       └── index.ts             # Barrel exports
 ├── content/                # Content data files (TypeScript)
 │   ├── clients.ts          # Client logo data
 │   ├── features.ts         # Press/features data
 │   ├── menu.ts             # Menu items
 │   ├── reviews.ts          # Google Reviews data
-│   ├── experience.ts       # Experience section steps & config
-│   ├── gallery.ts          # Gallery images
-│   └── services.ts         # Services data
+│   └── experience.ts       # Experience section steps & config
 ├── public/                 # Static assets
 │   ├── clients/            # Client logo images
 │   ├── featured/           # Press logo images
