@@ -47,7 +47,7 @@
 │   ├── Preloader.tsx       # Loading screen animation
 │   ├── DrinkCarousel.tsx   # Infinite-loop drink image carousel (peek layout)
 │   └── sections/           # Page sections (barrel-exported via index.ts)
-│       ├── InquirySection.tsx   # Embedded Google Form
+│       ├── InquirySection.tsx   # CTA linking to external Google Form
 │       ├── FeaturedInSection.tsx # Press mentions
 │       ├── LogoCarousel.tsx     # Client logos carousel
 │       ├── MenuSection.tsx      # Menu section with DrinkCarousel + CTA
@@ -60,11 +60,10 @@
 │   ├── menu.ts             # Menu items
 │   ├── reviews.ts          # Google Reviews data
 │   └── experience.ts       # Experience section steps & config
-├── public/                 # Static assets
-│   ├── clients/            # Client logo images
-│   ├── featured/           # Press logo images
-│   └── *.png, *.ttf        # Other static files
-└── assets/                 # Source assets (PDFs, docs - not served)
+└── public/                 # Static assets
+    ├── clients/            # Client logo images
+    ├── featured/           # Press logo images
+    └── *.png, *.ttf        # Other static files
 ```
 
 ---
@@ -149,8 +148,6 @@ npm run lint     # Run ESLint
 
 Required in `.env`:
 ```
-NEXT_PUBLIC_GOOGLE_FORM_URL=<embedded form URL>
-NEXT_PUBLIC_GOOGLE_FORM_DIRECT_URL=<direct form URL>
 NEXT_PUBLIC_MENU_URL=<menu PDF URL>
 ```
 
@@ -172,9 +169,7 @@ NEXT_PUBLIC_POSTHOG_HOST=<PostHog host URL>
 
 4. **Mobile-First** - The design is responsive.
 
-5. **No Backend** - Form submissions go directly to Google Forms via embedded iframe.
-
-6. **Assets vs Public** - `/assets/` contains source files (PDFs, docs). `/public/` contains web-served assets.
+5. **No Backend** - Form submissions go to Google Forms via external link.
 
 ---
 

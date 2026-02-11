@@ -114,7 +114,25 @@ Host on GitHub Pages (free) using Next.js static export (`output: 'export'` in `
 Create a `.env` file in the root directory:
 
 ```
-NEXT_PUBLIC_GOOGLE_FORM_URL=<embedded form URL>
-NEXT_PUBLIC_GOOGLE_FORM_DIRECT_URL=<direct form URL>
 NEXT_PUBLIC_MENU_URL=<menu PDF URL>
 ```
+
+## TODO
+
+### Content & Conversion
+- [ ] Add specific numbers to LogoCarousel header (e.g. "150+ events served across Houston")
+- [ ] Add pricing signal or "Request a custom quote" language
+- [ ] Add FAQ section (booking lead time, travel radius, dietary options, cancellation policy)
+
+### SEO & Analytics
+- [ ] Wire up PostHog (env vars defined, not yet initialized)
+- [ ] Add tracking events (CTA clicks, form views, social link clicks)
+- [ ] Complete JSON-LD schema in layout.tsx (add telephone, priceRange)
+- [ ] Add canonical URL to metadata
+- [ ] Compress images in /public (convert to WebP)
+- [ ] Set up Google Search Console and submit sitemap
+
+### Visual Polish
+- [ ] Upgrade animations to spring physics (`type: 'spring'` instead of `ease: 'easeOut'`)
+- [ ] Standardize section spacing (currently inconsistent: py-12, py-16, py-20)
+- [ ] Improve FeaturedIn card styling
