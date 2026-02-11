@@ -187,16 +187,18 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
             {extendedImages.map((image, index) => (
               <div
                 key={`drink-${index}`}
-                className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex-shrink-0"
+                className="flex-shrink-0"
                 style={{ width: isMobile ? '80%' : '27%' }}
               >
-                <Image
-                  src={image}
-                  alt="Boba Wali signature drink"
-                  fill
-                  className="object-cover"
-                  priority={index >= cloneCount && index < cloneCount + visibleCount + 2}
-                />
+                <div className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                  <Image
+                    src={image}
+                    alt="Boba Wali signature drink"
+                    fill
+                    className="object-cover"
+                    priority={index >= cloneCount && index < cloneCount + visibleCount + 2}
+                  />
+                </div>
               </div>
             ))}
           </div>
