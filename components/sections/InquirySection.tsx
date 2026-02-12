@@ -2,9 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-
-const GOOGLE_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLScWsa6uTG35rSlNw7PHiWKxZDdPnFQ2Bh0EP8IdGBpedgRr8Q/viewform'
+import { GOOGLE_FORM_URL } from '@/content/links'
 const INSTAGRAM_URL = 'https://www.instagram.com/bobawali.htx/'
 
 export default function InquirySection() {

@@ -2,15 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { GOOGLE_FORM_URL } from '@/content/links'
 
 export default function HeroBackground() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
     <section
       id="hero"
@@ -56,12 +50,14 @@ export default function HeroBackground() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
           >
-            <button
-              onClick={() => scrollToSection('#inquiry')}
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-xl shadow-lg shadow-primary/25 text-lg"
             >
               Book Your Event
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
