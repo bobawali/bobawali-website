@@ -7,6 +7,9 @@ node_modules
 *.png
 !public/**/*.png
 !app/icon.png
+!app/opengraph-image.png
+!app/twitter-image.png
+out/
 docs/
 tsconfig.tsbuildinfo
 *.MOV
