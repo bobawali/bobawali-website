@@ -8,6 +8,13 @@ export default function LogoCarousel() {
   // Double the array for seamless infinite scroll
   const duplicatedClients = [...clients, ...clients]
 
+  // Calculate total scroll distance for one full set of logos
+  const gap = 24 // gap-6 = 1.5rem = 24px
+  const totalScrollWidth = clients.reduce((sum, client) => {
+    const width = client.id === 'texas-halal-fest' || client.id === 'cars-n-chai' ? 160 : 100
+    return sum + width + gap
+  }, 0)
+
   return (
     <section className="py-12 bg-white overflow-hidden">
       <motion.p
@@ -29,7 +36,7 @@ export default function LogoCarousel() {
         <motion.div
         className="flex gap-6 items-center"
         animate={{
-          x: [0, -(100 + 24) * clients.length],
+          x: [0, -totalScrollWidth],
         }}
         transition={{
           x: {

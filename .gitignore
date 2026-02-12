@@ -1,6 +1,8 @@
 node_modules
 .next
 .DS_Store
+.env
+.env.*
 .playwright-mcp/
 *.png
 !public/**/*.png

@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import Image from 'next/image'
+import type { DrinkImage } from '@/content/menu'
 
 interface DrinkCarouselProps {
-  images: string[]
+  images: DrinkImage[]
   autoPlayInterval?: number
 }
 
@@ -192,11 +193,10 @@ export default function DrinkCarousel({ images, autoPlayInterval = 2000 }: Drink
               >
                 <div className="relative aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
                   <Image
-                    src={image}
-                    alt="Boba Wali signature drink"
+                    src={image.src}
+                    alt={image.alt}
                     fill
                     className="object-cover"
-                    priority={index >= cloneCount && index < cloneCount + visibleCount + 2}
                   />
                 </div>
               </div>

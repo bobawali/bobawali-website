@@ -8,6 +8,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bobawali.com'),
   title: 'Boba Wali – South Asian Fusion Bubble Tea Cart & Catering in Houston',
   description: 'Houston\'s first South Asian fusion bubble tea & refreshers cart. Book Boba Wali for weddings, corporate events, birthdays, and more. Halal-friendly, non-alcoholic drinks featuring mango lassi boba, Rooh Afza lemonade, and falooda milk tea.',
   openGraph: {
